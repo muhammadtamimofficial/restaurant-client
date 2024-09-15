@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <div className=''>
             <footer className="ps-8 footer bg-neutral text-neutral-content p-10">
-                <div className='pl-72 text-center'>
+                <aside className='pl-72 text-center'>
                     <p>
                         <p className='text-2xl font-bold'>CONTACT US </p><br />
                         123 ABS Street, Uni 21, Bangladesh <br />
@@ -12,9 +12,9 @@ const Footer = () => {
                         Mon - Fri: 08:00 - 22:00 <br />
                         Sat - Sun: 10:00 - 23:00
                     </p>
-                </div>
+                </aside>
                 <nav className='text-center'>
-                    <p className=' font-bold'>Follow US </p><br />
+                    <p className='text-2xl font-bold'>Follow US </p><br />
                     <p>Join us on social media</p>
                     <div className="grid grid-flow-col gap-4 ">
                         <a href="http://twiter.com" target="_blank">
