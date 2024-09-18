@@ -17,34 +17,34 @@ import SectionTitle from '../../../component/SectionTitle/SectionTitle';
 
 const Category = () => {
     return (
-        <div className='mx-[12%] uppercase text-center   font-bold'>
+        <div className='md:mx-[12%] uppercase text-center   font-bold'>
             <SectionTitle className="text-black"
                 SubHeading={"From 11:00am to 10:00pm"}
                 Heading={"ORDER ONLINE"}
             ></SectionTitle>
             <Swiper
                 slidesPerView={4}
-                spaceBetween={30}
+                spaceBetween={70}
                 pagination={{
                     clickable: true,
                 }}
                 modules={[Pagination]}
-                className="mySwiper text-white"
+                className="mySwiper text-white text-2xl"
             >
-                <SwiperSlide className='text-center'><img src={img_1} alt="" />
-                    <h3 className='-mt-16'>Salad</h3>
+                <SwiperSlide><img src={img_1} alt="" />
+                    <h3 className='-mt-16 -ml-9 mb-10'>Salad</h3>
                 </SwiperSlide>
                 <SwiperSlide><img src={img_2} alt="" />
-                    <h3 className='-mt-16'>Soups</h3>
+                    <h3 className='-mt-16 -ml-9'>Soups</h3>
                 </SwiperSlide>
                 <SwiperSlide><img src={img_3} alt="" />
-                    <h3 className='-mt-16'>pizzas</h3>
+                    <h3 className='-mt-16 -ml-9'>pizzas</h3>
                 </SwiperSlide>
                 <SwiperSlide><img src={img_4} alt="" />
-                    <h3 className='-mt-16'>desserts</h3>
+                    <h3 className='-mt-16 -ml-9'>desserts</h3>
                 </SwiperSlide>
                 <SwiperSlide><img src={img_5} alt="" />
-                    <h3 className='-mt-16'>Soups</h3>
+                    <h3 className='-mt-16 -ml-9 '>Soups</h3>
                 </SwiperSlide>
             </Swiper>
         </div>
