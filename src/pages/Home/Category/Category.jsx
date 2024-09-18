@@ -13,10 +13,15 @@ import img_2 from '../../../../src/assets/assets/home/slide2.jpg';
 import img_3 from '../../../../src/assets/assets/home/slide3.jpg';
 import img_4 from '../../../../src/assets/assets/home/slide4.jpg';
 import img_5 from '../../../../src/assets/assets/home/slide5.jpg';
+import SectionTitle from '../../../component/SectionTitle/SectionTitle';
 
 const Category = () => {
     return (
-        <div className='mx-[12%] uppercase text-center mb-16 text-white font-bold'>
+        <div className='mx-[12%] uppercase text-center mb-16  font-bold'>
+            <SectionTitle className="text-black"
+                SubHeading={"From 11:00am to 10:00pm"}
+                Heading={"ORDER ONLINE"}
+            ></SectionTitle>
             <Swiper
                 slidesPerView={4}
                 spaceBetween={30}
@@ -24,7 +29,7 @@ const Category = () => {
                     clickable: true,
                 }}
                 modules={[Pagination]}
-                className="mySwiper "
+                className="mySwiper text-white"
             >
                 <SwiperSlide className='text-center'><img src={img_1} alt="" />
                     <h3 className='-mt-16'>Salad</h3>

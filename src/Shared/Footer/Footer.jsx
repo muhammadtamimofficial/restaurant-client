@@ -53,7 +53,7 @@ const Footer = () => {
                     </div>
                 </nav>
             </footer>
-            <p className='text-center text-gray-500 font-bold py-5 bg-black m-0 p-0'>Copyright ©  Muhammad Tamim 2024 - All right reserved</p>
+            <p className='text-center text-gray-500 font-bold py-5 bg-black m-0 p-0'>All right reserved 2024 Copyright © by Muhammad Tamim</p>
         </div>
     );
 };
