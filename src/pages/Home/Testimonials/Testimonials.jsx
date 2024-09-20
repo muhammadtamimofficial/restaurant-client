@@ -7,6 +7,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
+import { Rating } from '@smastrom/react-rating';
+import QuiteIcon from '../../../assets/assets/quite-icon.png'
 
 const Testimonials = () => {
     const [reviews, Setreviews] = useState([]);
@@ -19,7 +21,7 @@ const Testimonials = () => {
 
 
     return (
-        <div className='md:my-20 md:mx-10'>
+        <div className='md:mb-20 md:mx-10'>
             <SectionTitle
                 Heading={'TESTIMONIALS'}
                 SubHeading={'What Our Clients Say'}
@@ -31,14 +33,19 @@ const Testimonials = () => {
                             <SwiperSlide
                                 key={reviews._id}
                             >
-                                <div className=' justify-center items-center text-justify md:mx-auto md:w-8/12'>
-                                    <div>
-
+                                <div className='flex flex-col items-center text-justify md:mx-auto md:w-8/12'>
+                                    <div className=''>
+                                        <Rating
+                                            style={{ maxWidth: 180 }}
+                                            value={reviews.rating}
+                                            readOnly
+                                        />
+                                        <img className='w-20 my-3 md:mx-auto' src={QuiteIcon} alt="" />
                                     </div>
                                     <p className=' text-xl text-center'>
                                         {reviews.details}
                                     </p>
-                                    <h2 className='text-3xl md:my-3 text-orange-600 font-bold text-center'>
+                                    <h2 className='text-3xl md:my-3 text-orange-600 font-bold '>
                                         {reviews.name}
                                     </h2>
                                 </div>

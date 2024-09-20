@@ -7,8 +7,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from './pages/Home/Home/Home';
-import App from './App';
 import Main from './Layout/Main';
+import '@smastrom/react-rating/style.css'
+
 
 const router = createBrowserRouter([
   {
