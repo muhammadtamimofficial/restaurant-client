@@ -9,6 +9,8 @@ import {
 import Home from './pages/Home/Home/Home';
 import Main from './Layout/Main';
 import '@smastrom/react-rating/style.css'
+import Menu from './pages/Menu/Menu';
+import { HelmetProvider } from 'react-helmet-async';
 
 
 const router = createBrowserRouter([
@@ -21,8 +23,8 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: '/about',
-        element: <h2>I'm from about.</h2>,
+        path: '/Menu',
+        element: <Menu></Menu>,
       }
     ]
   },
@@ -31,6 +33,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
   </StrictMode>,
 )
