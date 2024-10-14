@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import Cover from '../../Shared/Cover/Cover';
-import img from '../../../src/assets/assets/menu/banner3.jpg'
+import Cover from '../../../Shared/Cover/Cover';
+import img from '../../../../src/assets/assets/menu/banner3.jpg'
 
 const Menu = () => {
     return (
@@ -18,6 +18,7 @@ const Menu = () => {
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste repudiandae a nihil cupiditate voluptatibus
                         ducimus illum quidem voluptate magnam officia!`}
             ></Cover>
+
         </div >
     );
 };

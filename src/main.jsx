@@ -9,7 +9,7 @@ import {
 import Home from './pages/Home/Home/Home';
 import Main from './Layout/Main';
 import '@smastrom/react-rating/style.css'
-import Menu from './pages/Menu/Menu';
+import Menu from './pages/Menu/Menu/Menu.jsx';
 import { HelmetProvider } from 'react-helmet-async';
 
 
