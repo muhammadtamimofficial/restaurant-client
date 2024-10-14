@@ -8,8 +8,8 @@ const Cover = ({ img, title, article }) => {
                 backgroundImage: `url(${img})`,
             }}>
             <div className="hero-overlay"></div>
-            <div className=" flex text-center bg-slate-800 w-2/3 text-center bg-opacity-60">
-                <div className="p-20">
+            <div className=" flex items-center justify-center text-center bg-slate-800 w-2/3 bg-opacity-60">
+                <div className="p-20 ">
                     <h1 className="mb-5 text-5xl font-bold">{title}</h1>
                     <p className="mb-5">
                         {article}

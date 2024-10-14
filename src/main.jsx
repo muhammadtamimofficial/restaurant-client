@@ -11,6 +11,7 @@ import Main from './Layout/Main';
 import '@smastrom/react-rating/style.css'
 import Menu from './pages/Menu/Menu/Menu.jsx';
 import { HelmetProvider } from 'react-helmet-async';
+import OrderFood from './pages/OrderFood/OrderFood.jsx';
 
 
 const router = createBrowserRouter([
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: '/Menu',
         element: <Menu></Menu>,
+      },
+      {
+        path: '/order',
+        element: <OrderFood></OrderFood>,
       }
     ]
   },
