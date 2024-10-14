@@ -4,7 +4,7 @@ import MenuItem from '../../../Shared/MenuItem/MenuItem';
 
 const MenuCategory = ({ subHeading, heading, title, subTitle, img, category }) => {
     return (
-        <div>
+        <div className='my-20'>
             {
                 heading && <SectionTitle
                     SubHeading={subHeading}
@@ -21,7 +21,7 @@ const MenuCategory = ({ subHeading, heading, title, subTitle, img, category }) =
                         <p>{subTitle}</p>
                     </div>
                 </div>}
-            <div className='md:mx-20 grid grid-cols-2 my-20'>
+            <div className='md:mx-20 grid grid-cols-2 mt-10'>
                 {
                     category.map(item => <MenuItem
                         key={item._id}
@@ -31,6 +31,9 @@ const MenuCategory = ({ subHeading, heading, title, subTitle, img, category }) =
                         price={item.price}
                     ></MenuItem>)
                 }
+            </div>
+            <div className='text-center'>
+                <button className="btn my-5 btn-outline border-b-4 border-black">ORDER YOUR FAVOURITE FOOD</button>
             </div>
         </div>
     );
