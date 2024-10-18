@@ -11,6 +11,7 @@ const FoodCard = ({ item }) => {
                     alt="Shoes"
                     className="rounded-xl" />
             </figure>
+            <span className='text-white bg-blue-500 rounded absolute px-4 py-2 right-12 top-14'>{item.price}$</span>
             <div className="card-body items-center text-center">
                 <h2 className="card-title">{item.name}</h2>
                 <p>{item.recipe}</p>
