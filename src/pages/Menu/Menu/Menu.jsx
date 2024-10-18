@@ -15,7 +15,7 @@ const Menu = () => {
     const pizza = menu.filter(item => item.category === "pizza")
     const salad = menu.filter(item => item.category === "salad")
     const soup = menu.filter(item => item.category === "soup")
-    console.log(offered);
+    // console.log(offered);
 
     return (
         <div>
