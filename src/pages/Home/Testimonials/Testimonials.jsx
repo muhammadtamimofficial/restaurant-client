@@ -13,7 +13,7 @@ import QuiteIcon from '../../../assets/assets/quite-icon.png'
 const Testimonials = () => {
     const [reviews, Setreviews] = useState([]);
     useEffect(() => {
-        fetch('reviews.json')
+        fetch('http://localhost:5000/reviews')
             .then(res => res.json())
             .then(data => Setreviews(data))
     }, [])
