@@ -7,6 +7,9 @@ import Testimonials from "../Testimonials/Testimonials";
 
 
 const Home = () => {
+
+    console.log("Git Fork Is Working Or Not");
+
     return (
         <div>
             <Helmet>
