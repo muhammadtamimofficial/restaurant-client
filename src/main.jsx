@@ -1,4 +1,4 @@
-import { Children, StrictMode } from 'react'
+import { children, StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 
@@ -12,6 +12,10 @@ import '@smastrom/react-rating/style.css'
 import Menu from './pages/Menu/Menu/Menu.jsx';
 import { HelmetProvider } from 'react-helmet-async';
 import OrderFood from './pages/OrderFood/OrderFood.jsx';
+import AuthProvider from './Providers/AuthProvider.jsx';
+import SignUp from './pages/SignUp/SignUp.jsx';
+import Login from './pages/Login/Login.jsx';
+import PrivateRoute from './PriveteRoute/PrivateRoute.jsx';
 
 
 const router = createBrowserRouter([
@@ -30,7 +34,15 @@ const router = createBrowserRouter([
       {
         path: '/order/:category',
         element: <OrderFood></OrderFood>,
-      }
+      },
+      {
+        path: '/login',
+        element: <Login></Login>,
+      },
+      {
+        path: '/signup',
+        element: <SignUp></SignUp>,
+      },
     ]
   },
 ]);
@@ -38,8 +50,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <HelmetProvider>
-      <RouterProvider router={router} />
-    </HelmetProvider>
+    <AuthProvider>
+      <HelmetProvider>
+        <RouterProvider router={router} />
+      </HelmetProvider>
+    </AuthProvider>
   </StrictMode>,
 )
