@@ -35,7 +35,7 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user)
+                console.log(user._UserImpl)
                 Swal.fire({
                     title: "Login completed",
                     // text: "You clicked the button!",

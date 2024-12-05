@@ -7,19 +7,34 @@ import Swal from 'sweetalert2';
 import { AuthContext } from '../../Providers/AuthProvider';
 
 const SignUp = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const { createUser } = useContext(AuthContext);
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
     const onSubmit = data => {
         // console.log(data, data.email, data.password);
+        // console.log(data.name, data.photo_URL)
         createUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                Swal.fire("successfully created this account.");
+                console.log(data.name, data.photo_URL)
+                updateUserProfile(data.name, data.photo_URL)
+                    .then((result => {
+                        Swal.fire("successfully created this account.");
+                        reset();
+                    }))
+                    .catch(error => {
+                        Swal.fire({
+                            icon: "error",
+                            title: `Oops...${error}`,
+                            text: "Something went wrong!",
+                            footer: 'Try again later.'
+                        });
+                        reset();
+                    })
                 navigate(from, { replace: true });
             })
             .catch(error => {
@@ -39,6 +54,9 @@ const SignUp = () => {
                         text: "Something went wrong!",
                         footer: 'Try again later.'
                     });
+
+                    // console.log(data, data.email, data.password);
+                    // console.log(data.name, data.photo_URL)
                 }
 
 
@@ -71,6 +89,16 @@ const SignUp = () => {
                             </div>
                             <div className="form-control">
                                 <label className="label">
+                                    <span className="label-text">Photo URL</span>
+                                </label>
+                                <label className="input input-bordered flex items-center gap-2">
+                                    <img src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=" className="w-4 h-4 " ></img>
+                                    <input type="photo_URL" name='photo_URL' {...register("photo_URL", { required: true })} className="grow" placeholder="photo URL" />
+                                </label>
+                                {errors.photo_URL && <span className='mt-2 text-red-500'> photo URL field is required</span>}
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
                                 <label className="input input-bordered flex items-center gap-2">
@@ -100,8 +128,8 @@ const SignUp = () => {
                             <Link to="/login" className="link link-primary">Login now</Link>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div >
+            </div >
         </>
     );
 };
