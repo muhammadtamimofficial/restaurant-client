@@ -20,11 +20,21 @@ const SignUp = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                console.log(data.name, data.photo_URL)
                 updateUserProfile(data.name, data.photo_URL)
                     .then((result => {
                         Swal.fire("successfully created this account.");
                         reset();
                     }))
+                    .catch(error => {
+                        Swal.fire({
+                            icon: "error",
+                            title: `Oops...${error}`,
+                            text: "Something went wrong!",
+                            footer: 'Try again later.'
+                        });
+                        reset();
+                    })
                 navigate(from, { replace: true });
             })
             .catch(error => {
